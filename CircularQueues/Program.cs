@@ -21,7 +21,7 @@ namespace CircularQueues
         public void insert(int element)
         {
             // this statement checks for the overflow condition
-            if ((FRONT == 0 && REAR == max -1) || (FRONT == REAR + 1))
+            if ((FRONT == 0 && REAR == max -1) || (FRONT == REAR +1))
             {
                 Console.WriteLine("\n Queue Overflow\n");
                 return;
@@ -45,6 +45,34 @@ namespace CircularQueues
             }
             /* Once the position of REAR is determined, the element is added at it/s proper place.*/
             queue_array[REAR] = element;
+        }
+        public void remove()
+        {
+            /*Checks wheather the queue is empty.*/
+            if (FRONT == -1)
+            {
+                Console.WriteLine("Queue Underflow\n");
+                return;
+            }
+            Console.WriteLine("\nThe Element deleted from the queue is:" + queue_array[FRONT] + "\n");
+            /*Check if the queue has one element.*/
+            if (FRONT == REAR)
+            {
+                FRONT = -1;
+                REAR = -1;
+            }
+            else
+            {
+                //if the element to be deleted is at the last position of the array, 
+                //then the value of FRONT is set to 0 i.e to the first element if the array
+
+                if (FRONT == max - 1)
+                    FRONT = 0;
+                else
+                    //FRONT is incremented by one if it is not the first element of array.
+
+                    FRONT = REAR + 1;
+            }
         }
     }
 }
