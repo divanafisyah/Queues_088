@@ -119,5 +119,16 @@ namespace CircularQueues
                 Console.WriteLine();
             }
         }
+        static void Main(string[] args)
+        {
+            Program queue = new Program();
+            char ch;
+            while (true)
+            {
+                try
+                {
+                }
+            }
+        }
     }
 }
